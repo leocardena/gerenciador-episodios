@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="gerenciadorEpisodios">
+<head>
+	<meta charset="UTF-8">
+	<title>Gerenciador de Episódios</title>
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="../bower_components/angular-loading-bar/build/loading-bar.min.css">
+</head>
+<body>
+	<div ui-view="header"></div>
+	<main ui-view="content" role="main"></main>
+	<div ui-view="footer"></div>
+
+	<!--libs imports-->
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="../bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+	<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+
+	<!--
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
+	-->
+
+	<!--module import-->
+	<script src="omdb.services/omdb.module.js"></script>
+	<script src="titulos.services/gerenciador-episodios.titulos.services.module.js"></script>
+	<script src="gerenciador-episodios.core.module.js"></script>
+	<script src="titulos/gerenciador-episodios.titulos.module.js"></script>
+	<script src="gerenciador-episodios.main.module.js"></script>
+	<!--routes import-->
+	<script src="gerenciador-episodios.main.routes.js"></script>
+	<script src="titulos/gerenciador-episodios.titulos.routes.js"></script>
+	<!--values import-->
+	<script src="titulos.services/titulos.url-base.value.js"></script>
+	<script src="omdb.services/omdb.url-base.value.js"></script>
+	<!--titulos.services import-->
+	<script src="titulos.services/titulos.service.js"></script>
+	<script src="omdb.services/omdb.service.js"></script>
+	<!--controllers import-->
+	<script src="home/home.controller.js"></script>
+	<script src="titulos/meus-titulos.controller.js"></script>
+	<script src="titulos/novo-titulo.controller.js"></script>
+	<script src="titulos/editar-titulo.controller.js"></script>
+	<script src="titulos/novo-titulo-selecionado.controller.js"></script>
+	<script src="titulos/novo-titulo-selecionado-modal.controller.js"></script>
+	<!--configs imports-->
+	<script src="template/angular-loading-bar.config.js"></script>
+</body>
+</html>

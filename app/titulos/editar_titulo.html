@@ -1,0 +1,60 @@
+<div class="container">
+		<div class="row">
+			<form class="form-horizontal col-md-10 col-md-offset-2" name="vm.formTitulo"
+				  ng-submit="vm.editarTitulo(vm.titulo, vm.titulo.id)" novalidate>
+				<div class="row">
+					<div class="form-group">
+						<label for="nome" class="control-label col-md-3">Nome</label>
+						<div class="col-md-4">
+							<input type="text" class="form-control" ng-required="true" id="nome" name="nome"
+								   placeholder="Nome do anime ou série" ng-model="vm.titulo.nome" ng-required="true"
+								   ng-maxlength="100" ng-minlength="3">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label for="episodioAtual" class="control-label col-md-3">Episódio Atual</label>
+						<div class="col-md-4">
+							<input type="number" ng-required="true" class="form-control" id="episodioAtual"
+								   name="episodioAtual" placeholder="Episódio Atual" ng-model="vm.titulo.episodioAtual"
+								   ng-required="true" ng-maxlength="5" ng-minlength="1">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label for="episodiosTotais" class="control-label col-md-3">Episódios Totais</label>
+						<div class="col-md-4">
+							<input type="number" class="form-control" id="episodiosTotais"
+								   name="episodiosTotais" placeholder="Episódios Totais" ng-model="vm.titulo.episodiosTotais"
+								   ng-maxlength="5" ng-minlength="1">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label for="temporadaAtual" class="control-label col-md-3">Temporada Atual</label>
+						<div class="col-md-4">
+							<input type="number" class="form-control" id="temporadaAtual"
+								   name="temporadaAtual" placeholder="Temporada atual" ng-model="vm.titulo.temporada"
+								   ng-minlength="1" ng-maxlength="5">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="pull-left" ng-show="vm.invalido">
+						<p class="text-danger">Há dados inválidos.</p>
+					</div>
+					<div class="col-md-offset-5 col-md-1">
+						<button type="submit" class="btn btn-sm btn-default">Editar</button>
+					</div>
+				</div>
+
+			</form>
+	</div>
+</div>

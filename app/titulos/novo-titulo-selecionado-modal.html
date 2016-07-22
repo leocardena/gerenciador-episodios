@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row">
+        <h3 class="text-center">Adicionar aos Meus Títulos</h3>
+        <hr>
+    </div>
+    <div class="row">
+        <form class="form-horizontal" name="vm.formModal" ng-submit="vm.adicionar(vm.tituloSelecionado)"
+            novalidate>
+            <div class="row">
+                <div class="form-group">
+                    <label for="episodioAtual" class="control-label col-sm-5 col-sm-offset-1">Episódio Atual</label>
+                    <div class="col-sm-4">
+                        <input type="number" ng-required="true" class="form-control" id="episodioAtual"
+                               name="episodioAtual" ng-model="vm.tituloSelecionado.episodioAtual"
+                               ng-required="true" ng-maxlength="5" ng-minlength="1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="episodiosTotais" class="control-label col-sm-5 col-sm-offset-1">Episódios Totais</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="episodiosTotais"
+                               name="episodiosTotais" ng-model="vm.tituloSelecionado.episodiosTotais"
+                               ng-required="true" ng-maxlength="5" ng-minlength="1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="temporadaAtual" class="control-label col-sm-5 col-sm-offset-1">Temporada Atual</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="temporadaAtual"
+                               name="temporadaAtual" ng-model="vm.tituloSelecionado.temporada" ng-required="true"
+                               ng-required="true" ng-maxlength="3" ng-minlength="1">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row col-sm-12">
+                    <div ng-show="vm.invalido" class="pull-left">
+                        <p class="text-danger">Há dados inválidos.</p>
+                    </div>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-default">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img ng-if="vm.titulo.Poster != 'N/A'" class="search-poster" ng-src="{{vm.titulo.Poster}}"/>
+            <label ng-hide="vm.titulo.Poster != 'N/A'">
+                <span class="glyphicon glyphicon-info-sign"></span>Sem imagem.
+            </label>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <h3 class="title">{{vm.titulo.Title}}</h3>
+            </div>
+            <p class="row text-muted">
+                IMDB Rating: {{vm.titulo.imdbRating}}
+            </p>
+            <p class="row text-muted">
+               Quantidade de votos: {{vm.titulo.imdbVotes}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p class="row">
+                Tipo: {{vm.titulo.Type}}
+            </p>
+            <p class="row">
+                Gênero(s): {{vm.titulo.Genre}}
+            </p>
+            <p class="row">
+                País: {{vm.titulo.Country}}
+            </p>
+            <p class="row">
+                Idioma: {{vm.titulo.Language}}
+            </p>
+            <div class="row">
+                <div class="btn btn-default" ng-click="vm.abrirModal(vm.titulo)" >Adicinar aos Meus Títulos</div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <uib-accordion close-others="vm.fecharOutros">
+                <uib-accordion-group is-open="vm.status.infoGeraisAberta" is-open="vm.status.infoGeraisAberta"
+                                     is-disabled="vm.status.infoGeraisFechada">
+                    <uib-accordion-heading>
+                        Informações Gerais
+                        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down':
+                            vm.status.infoGeraisAberta, 'glyphicon-chevron-right': !vm.status.infoGeraisAberta}"></i>
+                    </uib-accordion-heading>
+                    <div class="row">
+                        Lançamento: {{vm.titulo.Released}}
+                    </div>
+                    <div class="row">
+                        Duração: {{vm.titulo.Runtime}}
+                    </div>
+                    <div class="row">
+                        Sinopse: {{vm.titulo.Plot}}
+                    </div>
+                </uib-accordion-group>
+                <uib-accordion-group  is-open="vm.status.elencoAberto">
+                    <uib-accordion-heading>
+                    Elenco
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down':
+                            vm.status.elencoAberto, 'glyphicon-chevron-right': !vm.status.elencoAberto}"></i>
+                    </uib-accordion-heading>
+                    <div class="row">
+                        Diretor: {{vm.titulo.Director}}
+                    </div>
+                    <div class="row">
+                        Escritor: {{vm.titulo.Writer}}
+                    </div>
+                    <div class="row">
+                        Atores: {{vm.titulo.Actors}}
+                    </div>
+                </uib-accordion-group>
+            </uib-accordion>
+        </div>
+    </div>
+</div>

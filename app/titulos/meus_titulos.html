@@ -1,0 +1,54 @@
+<div class="container">
+
+  <div class="row">
+      <h2 class="text-center">Meus Títulos</h2>
+  </div>
+
+  <div class="row">
+    <h5 class="text-center text-warning" ng-show="!vm.titulos.length > 0">
+        Você ainda não tem títulos inseridos.
+    </h5>
+  </div>
+
+  <div class="row">
+      <div class="table-responsive" ng-show="vm.titulos.length > 0">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Episódio Atual</th>
+              <th>Episódios Totais</th>
+              <th>Temporada Atual</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="titulo in vm.titulos | orderBy: 'nome' track by titulo.id">
+              <td>{{titulo.nome}}</td>
+              <td>{{titulo.episodioAtual}}</td>
+              <td>{{titulo.episodiosTotais}}</td>
+              <td>{{titulo.temporada}}</td>
+              <td>
+                <a class="btn" ui-sref="titulos.editar({id : titulo.id})"
+                        uib-tooltip="Editar"
+                        tooltip-placement="up">
+                  <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <a class="btn" ui-sref="titulos.detalhes({id : titulo.id})"
+                       uib-tooltip="Detalhes"
+                       tooltip-placement="up">
+                  <span class="glyphicon glyphicon-list-alt"></span>
+                </a>
+                <a class="btn" ng-click="vm.removerTitulo(titulo.id)"
+                       uib-tooltip="Remover"
+                       tooltip-placement="up">
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!--.table-responsive-->
+  </div> <!--row-->
+
+</div>
