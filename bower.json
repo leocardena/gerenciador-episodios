@@ -6,7 +6,7 @@
   "description": "Application to manage episodes of series and animes.",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/leocardena",
   "private": true,
   "ignore": [
     "**/.*",
